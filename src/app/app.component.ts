@@ -8,14 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {//public
   title = 'hello balaji, welcome to Angular app!!!';
-  firstname = 'Balaji';
+  firstname = 'Balaji';//model
 
   constructor(private appService: AppService) {
 
   }
 
   handleClick() {
-    console.log(this.appService.save());
+    this.appService.save();
     console.log(this.firstname);
   }
 
