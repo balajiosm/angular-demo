@@ -84,6 +84,16 @@
       "name": "Vaish",
       "age": 100,
       "id": 18
+    },
+    {
+      "name": "Balaji O S M",
+      "dob": "1988-04-19",
+      "id": 19
+    },
+    {
+      "name": "Vaishnavi T E",
+      "dob": "1993-10-01",
+      "id": 20
     }
   ]
 }

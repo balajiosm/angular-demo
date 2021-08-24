@@ -8,14 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {//public
   title = 'hello balaji, welcome to Angular app!!!';
-  firstname = 'Balaji';//model
+  toCounter = 'hello counter';
+  //firstname = 'Balaji';//model
+  userForm = { name: 'Balaji', dob: '' };//model
   users: any = [];
   constructor(private appService: AppService) {
 
   }
 
   handleClick() {
-    this.appService.save(this.firstname,
+    this.appService.save(this.userForm,
       //success handler
       (response: any) => {
         console.log(response);
@@ -25,7 +27,7 @@ export class AppComponent {//public
       (error: any) => {
         alert(error);
       });
-    console.log(this.firstname);
+    console.log(this.userForm);
   }
 
   delete() {

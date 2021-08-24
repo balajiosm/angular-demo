@@ -6,10 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
+import { CounterComponent } from './counter/counter.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
+  declarations: [//all components are registered here
+    AppComponent, CounterComponent
   ],
   imports: [
     BrowserModule,
@@ -18,6 +19,6 @@ import { AppService } from './app.service';
     HttpClientModule
   ],
   providers: [AppService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent]//which is starting component
 })
 export class AppModule { }

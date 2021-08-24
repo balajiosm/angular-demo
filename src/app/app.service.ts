@@ -9,13 +9,8 @@ export class AppService {
 
     }
 
-    save(firstName: String, success: any, error: any) {
-        const promise = this.http.post("http://localhost:3000/users",
-            {
-                "name": firstName,
-                "age": 100
-            }
-        );
+    save(form: any, success: any, error: any) {
+        const promise = this.http.post("http://localhost:3000/users", form);
 
         promise.subscribe(success, error);
         console.log("service method save() called");
