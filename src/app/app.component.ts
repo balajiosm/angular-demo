@@ -32,8 +32,12 @@ export class AppComponent {//public
     console.log("deleted button");
   }
 
-  deleteUser(userId: number) {
-    this.appService.deleteUser(userId);
-    console.log("deleted User id" + userId);
+  deleteUser(userId: number, index: number) {
+    this.appService.deleteUser(userId,
+      //success handler
+      (response: any) => {
+        this.users.splice(index, 1);
+      });
+    console.log("deleted User id: " + userId);
   }
 }

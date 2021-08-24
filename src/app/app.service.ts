@@ -21,8 +21,8 @@ export class AppService {
         console.log("service method save() called");
     }
 
-    deleteUser(userId: number) {
+    deleteUser(userId: number, success: any) {
         const promise = this.http.delete("http://localhost:3000/users/" + userId);
-        promise.subscribe();
+        promise.subscribe(success);
     }
 }

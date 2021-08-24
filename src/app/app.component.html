@@ -5,9 +5,9 @@
 {{title}} {{firstname}}
 <br>
 <ul>
-    <li *ngFor="let user of users">
+    <li *ngFor="let user of users; let i=index">
         <!--ngFor Directive-->
         {{user.name}}
-        <button (click)="deleteUser(user.id)">DeleteUser</button>
+        <button (click)="deleteUser(user.id, i)">DeleteUser</button>
     </li>
 </ul>
