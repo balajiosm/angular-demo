@@ -31,4 +31,9 @@ export class AppComponent {//public
   delete() {
     console.log("deleted button");
   }
+
+  deleteUser(userId: number) {
+    this.appService.deleteUser(userId);
+    console.log("deleted User id" + userId);
+  }
 }

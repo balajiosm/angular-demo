@@ -8,5 +8,6 @@
     <li *ngFor="let user of users">
         <!--ngFor Directive-->
         {{user.name}}
+        <button (click)="deleteUser(user.id)">DeleteUser</button>
     </li>
 </ul>
