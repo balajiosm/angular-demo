@@ -9,17 +9,24 @@ export class AppService {
 
     }
 
-    save() {
+    save(firstName: String) {
         const promise = this.http.post("http://localhost:3000/users",
             {
-                "name": "Wow",
+                "name": firstName,
                 "age": 100
             }
         );
 
-        promise.subscribe(function (response) {
-            console.log(response);
-        });
+        promise.subscribe(
+            //success handler
+            function (response) {
+                console.log(response);
+            },
+            //error handler
+            function (error) {
+                alert(error);
+            }
+        );
         console.log("service method save() called");
     }
 }
