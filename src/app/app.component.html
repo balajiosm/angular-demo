@@ -3,3 +3,10 @@
 
 <button (click)="delete()">Delete</button>
 {{title}} {{firstname}}
+<br>
+<ul>
+    <li *ngFor="let user of users">
+        <!--ngFor Directive-->
+        {{user.name}}
+    </li>
+</ul>

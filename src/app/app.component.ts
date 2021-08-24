@@ -9,13 +9,22 @@ import { Component } from '@angular/core';
 export class AppComponent {//public
   title = 'hello balaji, welcome to Angular app!!!';
   firstname = 'Balaji';//model
-
+  users: any = [];
   constructor(private appService: AppService) {
 
   }
 
   handleClick() {
-    this.appService.save(this.firstname);
+    this.appService.save(this.firstname,
+      //success handler
+      (response: any) => {
+        console.log(response);
+        this.users.push(response);
+      },
+      //error handler
+      (error: any) => {
+        alert(error);
+      });
     console.log(this.firstname);
   }
 

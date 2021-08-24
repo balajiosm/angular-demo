@@ -9,7 +9,7 @@ export class AppService {
 
     }
 
-    save(firstName: String) {
+    save(firstName: String, success: any, error: any) {
         const promise = this.http.post("http://localhost:3000/users",
             {
                 "name": firstName,
@@ -17,16 +17,7 @@ export class AppService {
             }
         );
 
-        promise.subscribe(
-            //success handler
-            function (response) {
-                console.log(response);
-            },
-            //error handler
-            function (error) {
-                alert(error);
-            }
-        );
+        promise.subscribe(success, error);
         console.log("service method save() called");
     }
 }
