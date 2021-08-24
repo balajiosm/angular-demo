@@ -8,7 +8,7 @@
 <ul>
     <li *ngFor="let user of users; let i=index">
         <!--ngFor Directive-->
-        {{user.name}}
+        {{user.name}}-{{user.dob}}
         <button (click)="deleteUser(user.id, i)">DeleteUser</button>
     </li>
 </ul>
